@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewMarker - Professional Review Management Platform</title>
+    <meta name="description" content="ReviewMarker helps businesses manage and showcase customer reviews with powerful tools for reputation management and customer feedback analysis.">
+    <meta name="keywords" content="review management, customer feedback, reputation management, business reviews">
+    <link rel="canonical" href="https://reviewmarker.com">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="ReviewMarker - Professional Review Management Platform">
+    <meta property="og:description" content="Powerful review management tools for businesses">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reviewmarker.com">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="sticky-nav glass-effect">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <i class="fas fa-star text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">ReviewMarker</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    
+                    <!-- Our Products Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-blue-600 transition-colors flex items-center space-x-1">
+                            <span>Our Products</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="dropdown absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border group-hover:active">
+                            <div class="py-2">
+                                <a href="#analytics-dashboard" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Review Analytics Dashboard</a>
+                                <a href="#feedback-tools" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Customer Feedback Tools</a>
+                                <a href="#reputation-management" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Reputation Management</a>
+                                <a href="#widget-builder" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Review Widget Builder</a>
+                                <a href="#api-integration" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">API Integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Affiliated Products Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-blue-600 transition-colors flex items-center space-x-1">
+                            <span>Affiliated Products</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="dropdown absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border group-hover:active">
+                            <div class="py-2">
+                                <a href="#social-media" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Social Media Manager</a>
+                                <a href="#email-marketing" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Email Marketing Suite</a>
+                                <a href="#crm-integration" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">CRM Integration</a>
+                                <a href="#analytics-pro" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Analytics Pro</a>
+                                <a href="#business-intelligence" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Business Intelligence</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About Us</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact Us</a>
+                    <a href="#blogs" class="text-gray-700 hover:text-blue-600 transition-colors">Blogs</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    
+                    <button onclick="openModal('ctaModal')" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors pulse-animation">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu md:hidden" id="mobileMenu">
+                <div class="py-4 space-y-2">
+                    <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Home</a>
+                    <a href="#our-products" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Our Products</a>
+                    <a href="#affiliated-products" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Affiliated Products</a>
+                    <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">About Us</a>
+                    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Contact Us</a>
+                    <a href="#blogs" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Blogs</a>
+                    <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Services</a>
+                    <button onclick="openModal('ctaModal')" class="block w-full text-left px-4 py-2 bg-blue-600 text-white rounded-lg mt-2">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-bg flex items-center pt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Transform Your <span class="text-yellow-300 typing-animation" id="typingText">Reviews</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl mb-8 text-blue-100 font-light">
+                        Professional Review Management Platform for Modern Businesses
+                    </h2>
+                    <p class="text-lg mb-8 text-blue-100 leading-relaxed">
+                        Harness the power of customer feedback with our comprehensive review management suite. 
+                        Build trust, improve reputation, and drive growth with intelligent analytics and automated workflows.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button onclick="openModal('demoModal')" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-play mr-2"></i>
+                            Watch Demo
+                        </button>
+                        <button onclick="openModal('ctaModal')" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                            Start Free Trial
+                        </button>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="relative floating-animation">
+                        <div class="bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 font-semibold">5.0</span>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mb-2">Amazing Platform!</h3>
+                            <p class="text-gray-600">ReviewMarker transformed how we handle customer feedback. Our response time improved by 300%!</p>
+                            <div class="flex items-center mt-4">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    JD
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-semibold text-gray-800">John Doe</p>
+                                    <p class="text-gray-500 text-sm">CEO, TechCorp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Powerful Features for Review Management</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive tools designed to help you collect, manage, and leverage customer reviews effectively
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Advanced Analytics</h3>
+                    <p class="text-gray-600">Get deep insights into customer sentiment with AI-powered analytics and real-time reporting dashboards.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Automated Responses</h3>
+                    <p class="text-gray-600">Respond to reviews automatically with smart templates and AI-generated personalized responses.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Reputation Protection</h3>
+                    <p class="text-gray-600">Monitor your online reputation across platforms and get alerts for new reviews instantly.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Multi-Platform Support</h3>
+                    <p class="text-gray-600">Manage reviews from Google, Yelp, Facebook, and 50+ other platforms from one dashboard.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Team Collaboration</h3>
+                    <p class="text-gray-600">Collaborate with your team using role-based access controls and workflow automation.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cog text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Custom Integrations</h3>
+                    <p class="text-gray-600">Integrate with your existing CRM, helpdesk, and marketing tools through our robust API.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Products Section -->
+    <section id="our-products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Product Suite</h2>
+                <p class="text-xl text-gray-600">Comprehensive solutions for every aspect of review management</p>
+            </div>
+
+            <div class="space-y-20">
+                <!-- Analytics Dashboard -->
+                <div id="analytics-dashboard" class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in-left">
+                        <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-chart-bar text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Analytics Dashboard</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <div class="text-2xl font-bold">98.2%</div>
+                                    <div class="text-sm opacity-90">Satisfaction Rate</div>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <div class="text-2xl font-bold">1,250</div>
+                                    <div class="text-sm opacity-90">Reviews This Month</div>
+                                </div>
+                            </div>
+                            <p class="opacity-90">Real-time insights and comprehensive analytics to track your reputation performance.</p>
+                        </div>
+                    </div>
+                    <div class="slide-in-right">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Powerful Analytics Dashboard</h3>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Get comprehensive insights into your review performance with our advanced analytics dashboard. Track sentiment trends, 
+                            monitor competitor performance, and identify areas for improvement with AI-powered analysis.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Real-time sentiment analysis across all platforms</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Competitor benchmarking and comparison</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Custom reporting and white-label dashboards</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Trend forecasting and predictive analytics</span>
+                            </li>
+                        </ul>
+                        <button onclick="openModal('ctaModal')" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback Tools -->
+                <div id="feedback-tools" class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in-left md:order-2">
+                        <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-8 text-white">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-comments text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Feedback Collection</h3>
+                            </div>
+                            <div class="space-y-4 mb-6">
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-300 mr-2"></i>
+                                        <span>Smart Review Requests</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-mobile-alt text-yellow-300 mr-2"></i>
+                                        <span>Mobile-Optimized Forms</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="opacity-90">Automated feedback collection with intelligent timing and personalized requests.</p>
+                        </div>
+                    </div>
+                    <div class="slide-in-right md:order-1">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Smart Feedback Collection Tools</h3>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Maximize your review collection with our intelligent feedback tools. Use automated campaigns, 
+                            smart timing, and personalized requests to increase your review volume by up to 300%.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Automated review request campaigns</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Multi-channel feedback collection (SMS, Email, QR codes)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Smart timing optimization based on customer journey</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Personalized review requests with AI-generated messaging</span>
+                            </li>
+                        </ul>
+                        <button onclick="openModal('ctaModal')" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reputation Management -->
+                <div id="reputation-management" class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in-left">
+                        <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-8 text-white">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-shield-alt text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Reputation Shield</h3>
+                            </div>
+                            <div class="grid grid-cols-1 gap-4 mb-6">
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <div class="flex items-center justify-between">
+                                        <span>Reputation Score</span>
+                                        <div class="text-2xl font-bold">9.2/10</div>
+                                    </div>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <div class="flex items-center justify-between">
+                                        <span>Alerts Today</span>
+                                        <div class="text-2xl font-bold">3</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="opacity-90">24/7 monitoring and instant alerts for new reviews across all platforms.</p>
+                        </div>
+                    </div>
+                    <div class="slide-in-right">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Complete Reputation Management</h3>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Protect and enhance your online reputation with our comprehensive monitoring system. 
+                            Get instant alerts, track sentiment changes, and respond quickly to maintain your brand image.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Real-time monitoring across 50+ platforms</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Instant email and SMS alerts for new reviews</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Crisis management tools and escalation workflows</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Competitor reputation tracking and benchmarking</span>
+                            </li>
+                        </ul>
+                        <button onclick="openModal('ctaModal')" class="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Widget Builder -->
+                <div id="review-widgets" class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="slide-in-left md:order-2">
+        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                    <i class="fas fa-th-large text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold">Custom Review Widgets</h3>
+            </div>
+            <div class="space-y-4 mb-6">
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-mouse-pointer text-yellow-300 mr-2"></i>
+                        <span>Drag-and-drop widget builder with live preview</span>
+                    </div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-columns text-yellow-300 mr-2"></i>
+                        <span>Multiple widget types (carousel, grid, testimonials)</span>
+                    </div>
+                </div>
+            </div>
+            <p class="opacity-90">Showcase your best reviews with customizable widgets to build trust and boost conversions.</p>
+        </div>
+    </div>
+    <div class="slide-in-right md:order-1">
+        <h3 class="text-3xl font-bold text-gray-800 mb-6">Custom Review Widgets</h3>
+        <p class="text-gray-600 text-lg mb-6">
+            Showcase your best reviews with beautiful, customizable widgets. Build trust and increase conversions by 
+            displaying social proof directly on your website with our easy-to-use widget builder.
+        </p>
+        <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                <span>Drag-and-drop widget builder with live preview</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                <span>Multiple widget types (carousel, grid, testimonials)</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                <span>Full customization of colors, fonts, and layout</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                <span>Mobile-responsive and SEO-optimized widgets</span>
+            </li>
+        </ul>
+        <button onclick="openModal('ctaModal')" class="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors">
+            Learn More
+        </button>
+    </div>
+</div>
+
+                </div>
+
+                <!-- API Integration -->
+                <div id="api-integration" class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in-left">
+                        <div class="bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl p-8 text-white">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-plug text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">API Integration</h3>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-4 mb-6 font-mono text-sm">
+                                <div class="text-green-400">GET /api/v1/reviews</div>
+                                <div class="text-gray-300 mt-2">
+                                    {<br>
+                                    &nbsp;&nbsp;"status": "success",<br>
+                                    &nbsp;&nbsp;"reviews": [...],<br>
+                                    &nbsp;&nbsp;"total": 1250<br>
+                                    }
+                                </div>
+                            </div>
+                            <p class="opacity-90">Powerful RESTful API with comprehensive documentation and SDKs.</p>
+                        </div>
+                    </div>
+                    <div class="slide-in-right">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Flexible API Integration</h3>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Integrate ReviewMarker seamlessly with your existing systems using our robust API. 
+                            Build custom solutions, automate workflows, and sync data with your favorite tools.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>RESTful API with JSON responses</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>SDKs for popular programming languages</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Webhooks for real-time notifications</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Comprehensive documentation and code examples</span>
+                            </li>
+                        </ul>
+                        <button onclick="openModal('ctaModal')" class="bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                            View API Docs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliated Products Section -->
+    <section id="affiliated-products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Affiliated Products</h2>
+                <p class="text-xl text-gray-600">Complete digital solutions to grow your business</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div id="social-media" class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg-2 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-share-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Social Media Manager</h3>
+                    <p class="text-gray-600 mb-6">Schedule, publish, and analyze your social media content across all platforms with our comprehensive social media management suite.</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Multi-platform posting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Content calendar</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Analytics & reporting</span>
+                        </li>
+                    </ul>
+                    <button onclick="openModal('ctaModal')" class="w-full bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div id="email-marketing" class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg-3 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Email Marketing Suite</h3>
+                    <p class="text-gray-600 mb-6">Create, send, and track email campaigns that convert. Our email marketing platform helps you build lasting customer relationships.</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Drag-and-drop editor</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Automation workflows</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>A/B testing</span>
+                        </li>
+                    </ul>
+                    <button onclick="openModal('ctaModal')" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div id="crm-integration" class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg-4 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">CRM Integration</h3>
+                    <p class="text-gray-600 mb-6">Seamlessly connect with leading CRM platforms to streamline your customer relationship management and sales processes.</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Salesforce integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>HubSpot sync</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Custom integrations</span>
+                        </li>
+                    </ul>
+                    <button onclick="openModal('ctaModal')" class="w-full bg-orange-600 text-white py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div id="analytics-pro" class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-pie text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Analytics Pro</h3>
+                    <p class="text-gray-600 mb-6">Advanced analytics and business intelligence tools to help you make data-driven decisions and optimize your business performance.</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Custom dashboards</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Predictive analytics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Data visualization</span>
+                        </li>
+                    </ul>
+                    <button onclick="openModal('ctaModal')" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div id="business-intelligence" class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg-2 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Business Intelligence</h3>
+                    <p class="text-gray-600 mb-6">Transform your data into actionable insights with our comprehensive business intelligence platform featuring AI-powered recommendations.</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>AI-powered insights</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Automated reporting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Market trends analysis</span>
+                        </li>
+                    </ul>
+                    <button onclick="openModal('ctaModal')" class="w-full bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="w-16 h-16 gradient-bg-3 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Partnership Program</h3>
+                    <p class="text-gray-600 mb-6">Join our partner ecosystem and offer ReviewMarker solutions to your clients while earning attractive commissions and benefits.</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Attractive commission rates</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>Marketing support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
+                            <span>White-label options</span>
+                        </li>
+                    </ul>
+                    <button onclick="openModal('ctaModal')" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Become Partner
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Carousel Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">Trusted by thousands of businesses worldwide</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <div class="carousel-container rounded-xl overflow-hidden">
+                    <div class="flex transition-transform duration-500" id="reviewsCarousel">
+                        <div class="carousel-slide bg-gray-50 p-4 md:p-8">
+                            <div class="text-center">
+                                <div class="flex justify-center text-yellow-400 text-xl md:text-2xl mb-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Game-Changing Platform</h3>
+                                <p class="text-gray-600 text-base md:text-lg mb-6 italic px-2">
+                                    "ReviewMarker completely transformed our customer feedback process. We've seen a 200% increase in positive reviews and our team productivity has doubled."
+                                </p>
+                                <div class="flex items-center justify-center">
+                                    <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm md:text-lg">
+                                        SM
+                                    </div>
+                                    <div class="ml-4 text-left">
+                                        <h4 class="font-bold text-gray-800 text-sm md:text-base">Sarah Mitchell</h4>
+                                        <p class="text-gray-600 text-xs md:text-sm">Marketing Director, RetailPro</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide bg-gray-50 p-4 md:p-8">
+                            <div class="text-center">
+                                <div class="flex justify-center text-yellow-400 text-xl md:text-2xl mb-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Outstanding ROI</h3>
+                                <p class="text-gray-600 text-base md:text-lg mb-6 italic px-2">
+                                    "The analytics and automation features saved us 15 hours per week. Our customer satisfaction scores improved by 40% in just 3 months."
+                                </p>
+                                <div class="flex items-center justify-center">
+                                    <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm md:text-lg">
+                                        MJ
+                                    </div>
+                                    <div class="ml-4 text-left">
+                                        <h4 class="font-bold text-gray-800 text-sm md:text-base">Michael Johnson</h4>
+                                        <p class="text-gray-600 text-xs md:text-sm">Operations Manager, ServiceFirst</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide bg-gray-50 p-4 md:p-8">
+                            <div class="text-center">
+                                <div class="flex justify-center text-yellow-400 text-xl md:text-2xl mb-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Incredible Support</h3>
+                                <p class="text-gray-600 text-base md:text-lg mb-6 italic px-2">
+                                    "Not only is the platform amazing, but their customer support is phenomenal. They helped us set up everything perfectly and we were up and running in no time."
+                                </p>
+                                <div class="flex items-center justify-center">
+                                    <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm md:text-lg">
+                                        LB
+                                    </div>
+                                    <div class="ml-4 text-left">
+                                        <h4 class="font-bold text-gray-800 text-sm md:text-base">Lisa Brown</h4>
+                                        <p class="text-gray-600 text-xs md:text-sm">CEO, TechStartup Inc</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button onclick="previousSlide()" class="carousel-controls left">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <button onclick="nextSlide()" class="carousel-controls right">
+                    <i class="fas fa-chevron-right text-gray-600"></i>
+                </button>
+
+                <!-- Carousel Indicators -->
+                <div class="flex justify-center mt-6 md:mt-8 space-x-2">
+                    <button onclick="goToSlide(0)" class="carousel-dot w-3 h-3 bg-blue-600 rounded-full transition-all"></button>
+                    <button onclick="goToSlide(1)" class="carousel-dot w-3 h-3 bg-gray-300 rounded-full transition-all"></button>
+                    <button onclick="goToSlide(2)" class="carousel-dot w-3 h-3 bg-gray-300 rounded-full transition-all"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section id="success-stories" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Success Stories</h2>
+                <p class="text-xl text-gray-600">Real results from real businesses</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift scale-in">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-store text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Restaurant Chain</h3>
+                        <p class="text-gray-600">25 Locations</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">+300%</div>
+                            <div class="text-gray-600">Review Volume</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">4.8★</div>
+                            <div class="text-gray-600">Average Rating</div>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            "ReviewMarker helped us systematize our review collection across all locations, resulting in a massive increase in positive feedback."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift scale-in">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-laptop text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">SaaS Company</h3>
+                        <p class="text-gray-600">Tech Industry</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">-75%</div>
+                            <div class="text-gray-600">Response Time</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">95%</div>
+                            <div class="text-gray-600">Customer Satisfaction</div>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            "The automated response system and analytics helped us identify issues faster and respond more effectively to customer concerns."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-lift scale-in">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shopping-cart text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">E-commerce Store</h3>
+                        <p class="text-gray-600">Retail Industry</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">+150%</div>
+                            <div class="text-gray-600">Conversions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">4.9★</div>
+                            <div class="text-gray-600">Trust Score</div>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            "By showcasing authentic reviews with ReviewMarker's widgets, we built trust and saw a significant boost in sales conversions."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600">Choose the plan that fits your business needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Starter</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-4">
+                            $29<span class="text-lg text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-600 mb-8">Perfect for small businesses</p>
+                        
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Up to 100 reviews/month</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>5 platform integrations</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Basic analytics</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="openModal('ctaModal')" class="w-full bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                            Start Free Trial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift fade-in relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white px-4 py-1 text-sm font-semibold">
+                        POPULAR
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Professional</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-4">
+                            $79<span class="text-lg text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-600 mb-8">Best for growing businesses</p>
+                        
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Up to 500 reviews/month</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>15 platform integrations</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Advanced analytics & AI</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Automated responses</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="openModal('ctaModal')" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Start Free Trial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift fade-in">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Enterprise</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-4">
+                            $199<span class="text-lg text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-600 mb-8">For large organizations</p>
+                        
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Unlimited reviews</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>All platform integrations</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Custom analytics & reports</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>White-label solution</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="openModal('ctaModal')" class="w-full bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                            Contact Sales
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Partners Section -->
+    <section id="integrations" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Seamless Integrations</h2>
+                <p class="text-xl text-gray-600">Connect with your favorite tools and platforms</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-google text-4xl text-red-500 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Google</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-facebook text-4xl text-blue-600 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Facebook</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-yelp text-4xl text-red-600 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Yelp</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-salesforce text-4xl text-blue-500 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Salesforce</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-hubspot text-4xl text-orange-500 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">HubSpot</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-slack text-4xl text-purple-500 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Slack</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-mailchimp text-4xl text-yellow-500 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Mailchimp</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-shopify text-4xl text-green-600 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Shopify</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-wordpress text-4xl text-blue-700 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">WordPress</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-zapier text-4xl text-orange-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Zapier</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fab fa-microsoft text-4xl text-blue-500 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">Microsoft</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm hover-lift fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-plus text-4xl text-gray-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-700">40+ More</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Get answers to common questions about ReviewMarker</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="accordion bg-gray-50 rounded-lg fade-in">
+                        <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">How does ReviewMarker collect reviews?</h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">ReviewMarker integrates with over 50+ review platforms including Google, Yelp, Facebook, TripAdvisor, and more. We automatically sync your reviews in real-time and provide you with a unified dashboard to manage all feedback from one place.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion bg-gray-50 rounded-lg fade-in">
+                        <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">Can I respond to reviews automatically?</h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">Yes! Our AI-powered response system can automatically reply to reviews using customizable templates and smart personalization. You can set rules for different types of reviews and maintain your brand voice across all responses.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion bg-gray-50 rounded-lg fade-in">
+                        <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">Is there a free trial available?</h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">Absolutely! We offer a 14-day free trial with full access to all features. No credit card required to get started. You can explore the platform and see how it works for your business before making any commitment.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion bg-gray-50 rounded-lg fade-in">
+                        <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">What kind of analytics do you provide?</h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">Our analytics suite includes sentiment analysis, review trends, competitor benchmarking, response time tracking, and custom reporting. You'll get actionable insights to improve customer satisfaction and business performance.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion bg-gray-50 rounded-lg fade-in">
+                        <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">How secure is my data?</h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">We take data security seriously. All data is encrypted in transit and at rest using enterprise-grade encryption. We're SOC 2 compliant and follow industry best practices for data protection and privacy.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion bg-gray-50 rounded-lg fade-in">
+                        <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">Can I customize the review widgets?</h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">Yes! Our widget builder allows you to fully customize the appearance, colors, fonts, and layout to match your brand. You can create different widget styles for different pages and customize them with drag-and-drop simplicity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">About ReviewMarker</h2>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Transforming Business Reputation Management</h3>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Founded in 2020, ReviewMarker has become the leading platform for businesses to manage their online reputation effectively. We understand that customer reviews are more than just feedback – they're the cornerstone of modern business success.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Our mission is to empower businesses of all sizes with intelligent tools that turn customer feedback into actionable insights, helping them build stronger relationships and drive sustainable growth.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600" id="counter1">0</div>
+                            <div class="text-gray-600">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600" id="counter2">0</div>
+                            <div class="text-gray-600">Reviews Managed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600" id="counter3">0</div>
+                            <div class="text-gray-600">Countries Served</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Our Core Values</h4>
+                        <div class="space-y-6">
+                            <div class="timeline-item">
+                                <h5 class="font-semibold text-gray-800 mb-2">Customer-Centric</h5>
+                                <p class="text-gray-600 text-sm">Every feature we build puts customer success first. We listen to feedback and continuously improve our platform based on real user needs.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5 class="font-semibold text-gray-800 mb-2">Innovation</h5>
+                                <p class="text-gray-600 text-sm">We leverage cutting-edge AI and machine learning to provide intelligent insights and automation that saves time and drives results.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5 class="font-semibold text-gray-800 mb-2">Trust & Transparency</h5>
+                                <p class="text-gray-600 text-sm">Building lasting relationships through honest communication, transparent pricing, and reliable service delivery.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5 class="font-semibold text-gray-800 mb-2">Excellence</h5>
+                                <p class="text-gray-600 text-sm">We strive for excellence in everything we do, from product development to customer support and beyond.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive solutions for your review management needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 hover-lift fade-in">
+                    <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">Setup & Migration</h3>
+                    <p class="text-gray-600 text-sm">Complete onboarding assistance with data migration from existing systems and platform setup.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 hover-lift fade-in">
+                    <div class="w-12 h-12 gradient-bg-2 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">Training & Support</h3>
+                    <p class="text-gray-600 text-sm">Comprehensive training programs and 24/7 customer support to ensure your success.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 hover-lift fade-in">
+                    <div class="w-12 h-12 gradient-bg-3 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">Strategy Consulting</h3>
+                    <p class="text-gray-600 text-sm">Expert consultation on review management strategies and reputation building best practices.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 hover-lift fade-in">
+                    <div class="w-12 h-12 gradient-bg-4 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-wrench text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">Custom Development</h3>
+                    <p class="text-gray-600 text-sm">Tailored solutions and custom integrations to meet your unique business requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blogs" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Latest from Our Blog</h2>
+                <p class="text-xl text-gray-600">Insights, tips, and best practices for review management</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl overflow-hidden hover-lift fade-in">
+                    <div class="h-48 gradient-bg"></div>
+                    <div class="p-6">
+                        <div class="text-blue-600 text-sm font-semibold mb-2">REPUTATION MANAGEMENT</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">5 Strategies to Increase Positive Reviews</h4>
+                        <p class="text-gray-600 mb-4">Learn proven techniques to encourage satisfied customers to leave positive reviews and boost your online reputation.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Dec 15, 2024</span>
+                            <a href="#" class="text-blue-600 font-semibold hover:text-blue-700">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden hover-lift fade-in">
+                    <div class="h-48 gradient-bg-2"></div>
+                    <div class="p-6">
+                        <div class="text-green-600 text-sm font-semibold mb-2">ANALYTICS</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Understanding Customer Sentiment Analysis</h4>
+                        <p class="text-gray-600 mb-4">Discover how AI-powered sentiment analysis can help you understand customer emotions and improve your services.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Dec 12, 2024</span>
+                            <a href="#" class="text-green-600 font-semibold hover:text-green-700">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden hover-lift fade-in">
+                    <div class="h-48 gradient-bg-3"></div>
+                    <div class="p-6">
+                        <div class="text-purple-600 text-sm font-semibold mb-2">AUTOMATION</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Automating Review Responses: Best Practices</h4>
+                        <p class="text-gray-600 mb-4">Learn how to set up automated review responses that maintain a personal touch while saving time.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Dec 10, 2024</span>
+                            <a href="#" class="text-purple-600 font-semibold hover:text-purple-700">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition-colors">
+                    View All Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600">We'd love to hear from you. Let's start a conversation.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="fade-in">
+                    <div class="bg-gray-50 rounded-xl shadow-lg p-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Send us a message</h4>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="First Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                <input type="text" placeholder="Last Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            </div>
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none"></textarea>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="fade-in space-y-8">
+                    <div>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h4>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800">Office Address</h5>
+                                    <p class="text-gray-600">123 Business District, Mumbai, Maharashtra 400001, India</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800">Phone Number</h5>
+                                    <p class="text-gray-600">+91 98765 43210</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800">Email Address</h5>
+                                    <p class="text-gray-600">hello@reviewmarker.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800">Business Hours</h5>
+                                    <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold text-gray-800 mb-4">Follow Us</h5>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold">ReviewMarker</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Transforming how businesses manage customer reviews and build stronger relationships through intelligent feedback analysis.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#analytics-dashboard" class="text-gray-400 hover:text-white transition-colors">Review Analytics</a></li>
+                        <li><a href="#feedback-tools" class="text-gray-400 hover:text-white transition-colors">Feedback Tools</a></li>
+                        <li><a href="#reputation-management" class="text-gray-400 hover:text-white transition-colors">Reputation Management</a></li>
+                        <li><a href="#widget-builder" class="text-gray-400 hover:text-white transition-colors">Widget Builder</a></li>
+                        <li><a href="#api-integration" class="text-gray-400 hover:text-white transition-colors">API Integration</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Affiliated Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#social-media" class="text-gray-400 hover:text-white transition-colors">Social Media Manager</a></li>
+                        <li><a href="#email-marketing" class="text-gray-400 hover:text-white transition-colors">Email Marketing</a></li>
+                        <li><a href="#crm-integration" class="text-gray-400 hover:text-white transition-colors">CRM Integration</a></li>
+                        <li><a href="#analytics-pro" class="text-gray-400 hover:text-white transition-colors">Analytics Pro</a></li>
+                        <li><a href="#business-intelligence" class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#blogs" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        © 2025 ReviewMarker. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- CTA Modal -->
+    <div class="modal" id="ctaModal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Start Your Free Trial</h3>
+                <button onclick="closeModal('ctaModal')" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <input type="text" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                <input type="email" placeholder="Business Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                <input type="text" placeholder="Company Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                    <option>Select Company Size</option>
+                    <option>1-10 employees</option>
+                    <option>11-50 employees</option>
+                    <option>51-200 employees</option>
+                    <option>200+ employees</option>
+                </select>
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Start Free Trial
+                </button>
+            </form>
+            <p class="text-gray-500 text-sm text-center mt-4">
+                No credit card required • 14-day free trial • Cancel anytime
+            </p>
+        </div>
+    </div>
+
+    <!-- Demo Modal -->
+    <div class="modal" id="demoModal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Watch Demo</h3>
+                <button onclick="closeModal('demoModal')" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="aspect-video bg-gray-100 rounded-lg mb-6 flex items-center justify-center">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-play text-white text-2xl"></i>
+                    </div>
+                    <p class="text-gray-600">Demo video would be embedded here</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <button onclick="openModal('ctaModal'); closeModal('demoModal')" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Start Your Free Trial
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition-all transform translate-y-16 opacity-0 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+   <script src="script.js"></script>
+</body>
+</html>
